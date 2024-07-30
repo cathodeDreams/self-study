@@ -1,2 +1,2 @@
 # self-study
-resources for self learning
+resources for learning
