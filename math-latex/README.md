@@ -1,4 +1,4 @@
-# Elementary Mathematics and LaTeX: A Self-Study System
+# Elementary Mathematics and LaTeX #
 
 ## Prerequisites
 
