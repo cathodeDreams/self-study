@@ -8,6 +8,8 @@ This document outlines a self-study system for learning Python using Visual Stud
 2. Python 3.x installed on your system
 3. Basic computer literacy
 4. "Learning Python, 5th Edition" by Mark Lutz
+    - [pdf](https://files.catbox.moe/usvyht.pdf)
+    - [epub](https://files.catbox.moe/zrxhgg.epub)
 
 ## Setup
 
