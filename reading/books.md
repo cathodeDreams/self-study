@@ -99,7 +99,7 @@
 
 4. **The Not So Short Introduction to LaTeX2ε**
    - Author: Tobias Oetiker
-   - [Online PDF](https://tobi.oetiker.ch/lshort/lshort.pdf)
+   - [pdf](https://tobi.oetiker.ch/lshort/lshort.pdf)
 
 ### Software Engineering and Best Practices
 19. **The Practice of Programming**
