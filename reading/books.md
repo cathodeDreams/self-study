@@ -87,15 +87,15 @@
 
 1. **LaTeX: A Document Preparation System**
    - Author: Leslie Lamport
-   - [epub]()
+   - [pdf](https://files.catbox.moe/orbo2e.pdf)
 
 2. **The LaTeX Companion**
    - Authors: Frank Mittelbach, Michel Goossens, Johannes Braams, David Carlisle, Chris Rowley
-   - [epub]()
+   - [pdf](https://files.catbox.moe/7qv3ya.pdf)
 
 3. **Guide to LaTeX**
    - Authors: Helmut Kopka, Patrick W. Daly
-   - [epub]()
+   - [pdf]()
 
 4. **The Not So Short Introduction to LaTeX2ε**
    - Author: Tobias Oetiker
