@@ -1,4 +1,4 @@
-# Python Self-Study System with VS Code
+# Python
 
 This document outlines a self-study system for learning Python using Visual Studio Code (VS Code) and Mark Lutz's "Learning Python, 5th Edition". The approach emphasizes hands-on practice and gradual skill building.
 
