@@ -1,0 +1,1017 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\rank}{rank}
+
+\geometry{margin=1in}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
+
+\title{}
+\author{}
+\date{}
+
+% Dracula color scheme
+\definecolor{draculaBackground}{HTML}{282a36}
+\definecolor{draculaForeground}{HTML}{f8f8f2}
+\definecolor{draculaComment}{HTML}{6272a4}
+\definecolor{draculaPurple}{HTML}{bd93f9}
+\definecolor{draculaGreen}{HTML}{50fa7b}
+\definecolor{draculaOrange}{HTML}{ffb86c}
+\definecolor{draculaPink}{HTML}{ff79c6}
+\definecolor{draculaRed}{HTML}{ff5555}
+\definecolor{draculaYellow}{HTML}{f1fa8c}
+\definecolor{draculaCyan}{HTML}{8be9fd}
+
+% Page setup
+\geometry{margin=1in}
+\pagecolor{draculaBackground}
+\color{draculaForeground}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=draculaCyan,
+    filecolor=draculaGreen,
+    urlcolor=draculaPink,
+    citecolor=draculaYellow
+}
+
+% Custom commands for consistent styling
+\newcommand{\sectiontitle}[1]{\section{\textcolor{draculaPurple}{#1}}}
+\newcommand{\subsectiontitle}[1]{\subsection{\textcolor{draculaPink}{#1}}}
+\newcommand{\important}[1]{\textcolor{draculaOrange}{#1}}
+\newcommand{\concept}[1]{\textcolor{draculaGreen}{#1}}
+
+\title{\textcolor{draculaYellow}{\Huge Elementary Mathematics}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction to Number Systems}
+
+The study of mathematics begins with the concept of numbers. Numbers are abstract entities used to count, measure, and label. The development of number systems has been a crucial aspect of mathematical progress throughout history.
+
+\subsection{Natural Numbers}
+
+\begin{definition}
+The set of natural numbers, denoted by $\mathbb{N}$, consists of the positive integers:
+\[ \mathbb{N} = \{1, 2, 3, 4, \ldots\} \]
+\end{definition}
+
+Natural numbers arise from the fundamental concept of counting. They possess several important properties:
+
+\begin{enumerate}
+    \item Closure under addition: For any $a, b \in \mathbb{N}$, $a + b \in \mathbb{N}$
+    \item Closure under multiplication: For any $a, b \in \mathbb{N}$, $a \times b \in \mathbb{N}$
+    \item Well-ordering: Every non-empty subset of $\mathbb{N}$ has a least element
+\end{enumerate}
+
+\subsection{Integers}
+
+\begin{definition}
+The set of integers, denoted by $\mathbb{Z}$, consists of all natural numbers, their negatives, and zero:
+\[ \mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\} \]
+\end{definition}
+
+Integers extend the concept of natural numbers to include negative numbers and zero. This extension allows for the representation of debts, temperatures below zero, and other quantities that can be less than nothing.
+
+Properties of integers include:
+
+\begin{enumerate}
+    \item Closure under addition and subtraction
+    \item Closure under multiplication
+    \item Associativity and commutativity of addition and multiplication
+    \item Distributivity of multiplication over addition
+\end{enumerate}
+
+\subsection{Rational Numbers}
+
+\begin{definition}
+A rational number is any number that can be expressed as the quotient of two integers, where the denominator is not zero. The set of rational numbers is denoted by $\mathbb{Q}$:
+\[ \mathbb{Q} = \left\{\frac{a}{b} \mid a, b \in \mathbb{Z}, b \neq 0\right\} \]
+\end{definition}
+
+Rational numbers extend the concept of integers to include fractions. They arise naturally in situations involving division and proportion.
+
+Properties of rational numbers include:
+
+\begin{enumerate}
+    \item Closure under addition, subtraction, multiplication, and division (except division by zero)
+    \item Density: Between any two rational numbers, there exists another rational number
+\end{enumerate}
+
+\section{Basic Arithmetic Operations}
+
+\subsection{Addition}
+
+Addition is the most fundamental arithmetic operation. It combines two numbers to form a single number, called the sum.
+
+\begin{definition}
+For two numbers $a$ and $b$, their sum $a + b$ is the total when $b$ is combined with $a$.
+\end{definition}
+
+Properties of addition include:
+
+\begin{enumerate}
+    \item Commutativity: $a + b = b + a$ for all $a$ and $b$
+    \item Associativity: $(a + b) + c = a + (b + c)$ for all $a$, $b$, and $c$
+    \item Identity: For any number $a$, $a + 0 = a$
+    \item Inverse: For any number $a$, there exists $-a$ such that $a + (-a) = 0$
+\end{enumerate}
+
+\subsection{Subtraction}
+
+Subtraction is the inverse operation of addition. It finds the difference between two numbers.
+
+\begin{definition}
+For two numbers $a$ and $b$, their difference $a - b$ is the number which, when added to $b$, yields $a$.
+\end{definition}
+
+Subtraction can be defined in terms of addition:
+
+\[ a - b = a + (-b) \]
+
+Unlike addition, subtraction is neither commutative nor associative.
+
+\subsection{Multiplication}
+
+Multiplication is a fundamental operation that can be thought of as repeated addition.
+
+\begin{definition}
+For two numbers $a$ and $b$, their product $a \times b$ (or simply $ab$) is the result of adding $a$ to itself $b$ times.
+\end{definition}
+
+Properties of multiplication include:
+
+\begin{enumerate}
+    \item Commutativity: $ab = ba$ for all $a$ and $b$
+    \item Associativity: $(ab)c = a(bc)$ for all $a$, $b$, and $c$
+    \item Identity: For any number $a$, $a \times 1 = a$
+    \item Distributivity over addition: $a(b + c) = ab + ac$ for all $a$, $b$, and $c$
+\end{enumerate}
+
+\subsection{Division}
+
+Division is the inverse operation of multiplication. It determines how many times one number contains another.
+
+\begin{definition}
+For two numbers $a$ and $b$ (with $b \neq 0$), their quotient $a \div b$ (or $\frac{a}{b}$) is the number which, when multiplied by $b$, yields $a$.
+\end{definition}
+
+Division can be defined in terms of multiplication:
+
+\[ a \div b = a \times \frac{1}{b} \]
+
+Division is neither commutative nor associative. It is not defined when the divisor is zero.
+
+\section{Order and Inequality}
+
+The concept of order is fundamental in mathematics, allowing us to compare quantities and arrange numbers in sequence.
+
+\subsection{Order Relations}
+
+\begin{definition}
+For two real numbers $a$ and $b$:
+\begin{itemize}
+    \item $a < b$ means $a$ is less than $b$
+    \item $a > b$ means $a$ is greater than $b$
+    \item $a \leq b$ means $a$ is less than or equal to $b$
+    \item $a \geq b$ means $a$ is greater than or equal to $b$
+\end{itemize}
+\end{definition}
+
+These relations have several important properties:
+
+\begin{enumerate}
+    \item Trichotomy: For any two real numbers $a$ and $b$, exactly one of the following is true: $a < b$, $a = b$, or $a > b$
+    \item Transitivity: If $a < b$ and $b < c$, then $a < c$
+    \item Compatibility with operations: If $a < b$, then $a + c < b + c$ for any $c$, and if $c > 0$, then $ac < bc$
+\end{enumerate}
+
+\subsection{Absolute Value}
+
+The absolute value of a number is its distance from zero on the number line, regardless of direction.
+
+\begin{definition}
+For a real number $a$, the absolute value of $a$, denoted $|a|$, is defined as:
+\[ |a| = \begin{cases} 
+      a & \text{if } a \geq 0 \\
+      -a & \text{if } a < 0 
+   \end{cases}
+\]
+\end{definition}
+
+Properties of absolute value include:
+
+\begin{enumerate}
+    \item Non-negativity: $|a| \geq 0$ for all $a$
+    \item Symmetry: $|-a| = |a|$ for all $a$
+    \item Triangle inequality: $|a + b| \leq |a| + |b|$ for all $a$ and $b$
+\end{enumerate}
+
+\section{Elementary Algebra}
+
+Algebra extends arithmetic by using letters to represent numbers. This abstraction allows for the formulation and solution of a wide range of mathematical problems.
+
+\subsection{Variables and Expressions}
+
+\begin{definition}
+A variable is a symbol, usually a letter, that represents an unknown or unspecified number.
+\end{definition}
+
+\begin{definition}
+An algebraic expression is a combination of variables, numbers, and operations.
+\end{definition}
+
+Examples of algebraic expressions include:
+\begin{itemize}
+    \item $2x + 3$
+    \item $a^2 - b^2$
+    \item $\frac{x}{y} + z$
+\end{itemize}
+
+\subsection{Equations and Inequalities}
+
+\begin{definition}
+An equation is a statement that two expressions are equal.
+\end{definition}
+
+\begin{definition}
+An inequality is a statement that one expression is less than, less than or equal to, greater than, or greater than or equal to another expression.
+\end{definition}
+
+Examples:
+\begin{itemize}
+    \item Equation: $2x + 3 = 11$
+    \item Inequality: $3y - 2 < 7$
+\end{itemize}
+
+\subsection{Solving Linear Equations}
+
+A linear equation in one variable can be written in the form $ax + b = 0$, where $a$ and $b$ are constants and $a \neq 0$.
+
+To solve a linear equation:
+\begin{enumerate}
+    \item Simplify each side of the equation by combining like terms
+    \item Use inverse operations to isolate the variable on one side of the equation
+    \item Simplify to obtain the solution
+\end{enumerate}
+
+\begin{example}
+Solve the equation $2x - 5 = 3x + 7$
+
+Solution:
+\begin{align*}
+    2x - 5 &= 3x + 7 \\
+    2x - 3x &= 7 + 5 \\
+    -x &= 12 \\
+    x &= -12
+\end{align*}
+\end{example}
+
+\subsection{Polynomials}
+
+\begin{definition}
+A polynomial in $x$ is an expression of the form:
+\[ a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0 \]
+where $n$ is a non-negative integer and $a_n, a_{n-1}, \ldots, a_1, a_0$ are constants with $a_n \neq 0$.
+\end{definition}
+
+The degree of a polynomial is the highest power of the variable in the polynomial.
+
+Operations on polynomials include:
+\begin{itemize}
+    \item Addition and subtraction: Combine like terms
+    \item Multiplication: Use the distributive property and combine like terms
+    \item Division: Use long division or synthetic division
+\end{itemize}
+
+\begin{example}
+Multiply $(x + 2)(x - 3)$
+
+Solution:
+\begin{align*}
+    (x + 2)(x - 3) &= x(x - 3) + 2(x - 3) \\
+    &= x^2 - 3x + 2x - 6 \\
+    &= x^2 - x - 6
+\end{align*}
+\end{example}
+
+\section{Elementary Geometry}
+
+Geometry is the branch of mathematics concerned with the properties and relations of points, lines, surfaces, solids, and higher dimensional analogs.
+
+\subsection{Basic Geometric Objects}
+
+\begin{itemize}
+    \item Point: A location in space, having no dimension
+    \item Line: A straight path extending infinitely in both directions
+    \item Plane: A flat surface extending infinitely in all directions
+    \item Angle: The figure formed by two rays sharing a common endpoint
+\end{itemize}
+
+\subsection{Triangles}
+
+A triangle is a polygon with three sides and three angles.
+
+Types of triangles:
+\begin{itemize}
+    \item Equilateral: All sides and angles are equal
+    \item Isosceles: Two sides are equal
+    \item Scalene: No sides are equal
+    \item Right: Contains one right angle (90°)
+    \item Acute: All angles are less than 90°
+    \item Obtuse: One angle is greater than 90°
+\end{itemize}
+
+Important properties:
+\begin{itemize}
+    \item The sum of the angles in a triangle is always 180°
+    \item The Pythagorean theorem: In a right triangle with sides $a$, $b$, and hypotenuse $c$, $a^2 + b^2 = c^2$
+\end{itemize}
+
+\subsection{Circles}
+
+A circle is the set of all points in a plane that are a fixed distance (the radius) from a central point.
+
+Key terms:
+\begin{itemize}
+    \item Radius: The distance from the center to any point on the circle
+    \item Diameter: A line segment passing through the center and having its endpoints on the circle
+    \item Circumference: The distance around the circle
+    \item Area: The amount of space enclosed by the circle
+\end{itemize}
+
+Important formulas:
+\begin{itemize}
+    \item Circumference: $C = 2\pi r$, where $r$ is the radius
+    \item Area: $A = \pi r^2$
+\end{itemize}
+
+\subsection{Coordinate Geometry}
+
+Coordinate geometry combines algebra and geometry by using a coordinate system to specify the position of points in a plane or space.
+
+In a two-dimensional coordinate system:
+\begin{itemize}
+    \item Points are represented as ordered pairs $(x, y)$
+    \item The x-axis is horizontal and the y-axis is vertical
+    \item The origin is the point (0, 0) where the axes intersect
+\end{itemize}
+
+The distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ is given by the formula:
+
+\[ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
+
+This formula is derived from the Pythagorean theorem.
+
+\section{Elementary Number Theory}
+
+Number theory is the study of the properties of integers. It is one of the oldest branches of mathematics and has applications in cryptography and computer science.
+
+\subsection{Divisibility}
+
+\begin{definition}
+An integer $a$ is divisible by an integer $b$ if there exists an integer $k$ such that $a = bk$. We write $b \mid a$ to denote that $b$ divides $a$.
+\end{definition}
+
+Properties of divisibility:
+\begin{itemize}
+    \item If $a \mid b$ and $b \mid c$, then $a \mid c$
+    \item If $a \mid b$ and $a \mid c$, then $a \mid (bx + cy)$ for any integers $x$ and $y$
+\end{itemize}
+
+\subsection{Prime Numbers}
+
+\begin{definition}
+A prime number is a positive integer greater than 1 whose only positive divisors are 1 and itself.
+\end{definition}
+
+The first few prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...
+
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+Every positive integer greater than 1 can be represented uniquely as a product of prime powers.
+\end{theorem}
+
+This theorem is also known as the unique factorization theorem. It states that every positive integer greater than 1 can be expressed as a product of prime factors in a unique way, up to the order of the factors. For example:
+
+\[ 60 = 2^2 \times 3 \times 5 \]
+
+This factorization is unique; there is no other way to express 60 as a product of primes.
+
+\subsection{Greatest Common Divisor and Least Common Multiple}
+
+\begin{definition}
+The greatest common divisor (GCD) of two or more integers is the largest positive integer that divides each of the integers.
+\end{definition}
+
+\begin{definition}
+The least common multiple (LCM) of two or more integers is the smallest positive integer that is divisible by each of the integers.
+\end{definition}
+
+For two positive integers $a$ and $b$, there is an important relationship between their GCD and LCM:
+
+\[ \gcd(a,b) \times \lcm(a,b) = ab \]
+
+\subsection{Euclidean Algorithm}
+
+The Euclidean algorithm is an efficient method for computing the greatest common divisor of two numbers.
+
+\begin{theorem}[Euclidean Algorithm]
+Let $a$ and $b$ be positive integers with $a > b$. Then:
+\[ \gcd(a,b) = \gcd(b, r) \]
+where $r$ is the remainder when $a$ is divided by $b$.
+\end{theorem}
+
+This algorithm is based on the fact that the greatest common divisor of two numbers does not change if the larger number is replaced by its difference with the smaller number.
+
+\section{Elementary Set Theory}
+
+Set theory provides the foundation for much of modern mathematics. It deals with collections of objects called sets.
+
+\subsection{Basic Definitions and Notation}
+
+\begin{definition}
+A set is a well-defined collection of distinct objects.
+\end{definition}
+
+Set notation:
+\begin{itemize}
+    \item $\{a, b, c\}$ denotes the set containing elements $a$, $b$, and $c$
+    \item $x \in A$ means $x$ is an element of set $A$
+    \item $x \notin A$ means $x$ is not an element of set $A$
+    \item $|A|$ denotes the cardinality (number of elements) of set $A$
+    \item $\emptyset$ or $\{\}$ denotes the empty set
+\end{itemize}
+
+\subsection{Set Operations}
+
+\begin{definition}
+The union of sets $A$ and $B$, denoted $A \cup B$, is the set of all elements that are in $A$, in $B$, or in both.
+\[ A \cup B = \{x : x \in A \text{ or } x \in B\} \]
+\end{definition}
+
+\begin{definition}
+The intersection of sets $A$ and $B$, denoted $A \cap B$, is the set of all elements that are in both $A$ and $B$.
+\[ A \cap B = \{x : x \in A \text{ and } x \in B\} \]
+\end{definition}
+
+\begin{definition}
+The difference of sets $A$ and $B$, denoted $A \setminus B$, is the set of all elements that are in $A$ but not in $B$.
+\[ A \setminus B = \{x : x \in A \text{ and } x \notin B\} \]
+\end{definition}
+
+\begin{definition}
+The complement of a set $A$ with respect to a universal set $U$, denoted $A^c$ or $\overline{A}$, is the set of all elements in $U$ that are not in $A$.
+\[ A^c = \{x : x \in U \text{ and } x \notin A\} \]
+\end{definition}
+
+\subsection{Set Relations}
+
+\begin{definition}
+Set $A$ is a subset of set $B$, denoted $A \subseteq B$, if every element of $A$ is also an element of $B$.
+\end{definition}
+
+\begin{definition}
+Sets $A$ and $B$ are equal, denoted $A = B$, if they have exactly the same elements.
+\end{definition}
+
+\begin{theorem}
+For any sets $A$ and $B$, $A = B$ if and only if $A \subseteq B$ and $B \subseteq A$.
+\end{theorem}
+
+\subsection{Power Set}
+
+\begin{definition}
+The power set of a set $A$, denoted $P(A)$, is the set of all subsets of $A$, including the empty set and $A$ itself.
+\end{definition}
+
+For a finite set $A$ with $n$ elements, the power set $P(A)$ has $2^n$ elements.
+
+\section{Elementary Probability}
+
+Probability theory deals with the study of random phenomena. It provides a framework for modeling uncertainty and making predictions about events.
+
+\subsection{Basic Concepts}
+
+\begin{definition}
+An experiment is any process that produces a well-defined outcome.
+\end{definition}
+
+\begin{definition}
+The sample space, usually denoted $S$ or $\Omega$, is the set of all possible outcomes of an experiment.
+\end{definition}
+
+\begin{definition}
+An event is a subset of the sample space.
+\end{definition}
+
+\subsection{Probability Axioms}
+
+The modern approach to probability is based on three axioms introduced by Andrey Kolmogorov:
+
+\begin{enumerate}
+    \item The probability of an event is a non-negative real number: $P(A) \geq 0$ for any event $A$
+    \item The probability of the entire sample space is 1: $P(S) = 1$
+    \item For any sequence of mutually exclusive events $A_1, A_2, \ldots$, the probability of their union is the sum of their individual probabilities:
+    \[ P(A_1 \cup A_2 \cup \cdots) = P(A_1) + P(A_2) + \cdots \]
+\end{enumerate}
+
+\subsection{Conditional Probability}
+
+\begin{definition}
+The conditional probability of event $A$ given that event $B$ has occurred, denoted $P(A|B)$, is defined as:
+\[ P(A|B) = \frac{P(A \cap B)}{P(B)} \]
+where $P(B) > 0$.
+\end{definition}
+
+This leads to the multiplication rule of probability:
+
+\[ P(A \cap B) = P(A|B)P(B) = P(B|A)P(A) \]
+
+\subsection{Independence}
+
+\begin{definition}
+Events $A$ and $B$ are independent if the occurrence of one does not affect the probability of the other. Mathematically, this means:
+\[ P(A \cap B) = P(A)P(B) \]
+\end{definition}
+
+\subsection{Bayes' Theorem}
+
+Bayes' theorem provides a way to update probabilities based on new evidence:
+
+\[ P(A|B) = \frac{P(B|A)P(A)}{P(B)} \]
+
+This theorem has wide applications in statistics, machine learning, and many other fields.
+
+\section{Elementary Functions}
+
+Functions are fundamental objects in mathematics that describe relationships between quantities. They are essential in modeling real-world phenomena and form the basis for calculus and advanced mathematics.
+
+\subsection{Definition and Notation}
+
+\begin{definition}
+A function $f$ from a set $A$ to a set $B$ is a rule that assigns to each element $x$ in $A$ exactly one element $y$ in $B$. We write $f: A \to B$ and $y = f(x)$.
+\end{definition}
+
+Important terms:
+\begin{itemize}
+    \item Domain: The set of all possible input values (x-values)
+    \item Codomain: The set of all possible output values (y-values)
+    \item Range: The set of actual output values for the given domain
+\end{itemize}
+
+\subsection{Types of Functions}
+
+\subsubsection{Linear Functions}
+
+A linear function has the form $f(x) = mx + b$, where $m$ and $b$ are constants. The graph of a linear function is a straight line where:
+\begin{itemize}
+    \item $m$ is the slope (rate of change)
+    \item $b$ is the y-intercept (where the line crosses the y-axis)
+\end{itemize}
+
+\subsubsection{Quadratic Functions}
+
+A quadratic function has the form $f(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants and $a \neq 0$. The graph of a quadratic function is a parabola.
+
+The quadratic formula gives the roots (x-intercepts) of a quadratic equation $ax^2 + bx + c = 0$:
+
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
+\subsubsection{Exponential Functions}
+
+An exponential function has the form $f(x) = a \cdot b^x$, where $a$ and $b$ are constants and $b > 0$, $b \neq 1$. These functions model growth or decay processes.
+
+\subsubsection{Logarithmic Functions}
+
+Logarithmic functions are the inverse of exponential functions. The general form is $f(x) = \log_b(x)$, where $b$ is the base.
+
+Important properties:
+\begin{itemize}
+    \item $\log_b(xy) = \log_b(x) + \log_b(y)$
+    \item $\log_b(x^n) = n\log_b(x)$
+    \item $\log_b(1) = 0$
+    \item $\log_b(b) = 1$
+\end{itemize}
+
+\subsection{Function Composition}
+
+\begin{definition}
+The composition of functions $f$ and $g$, denoted $f \circ g$, is defined as:
+\[ (f \circ g)(x) = f(g(x)) \]
+\end{definition}
+
+Function composition is not commutative in general: $f \circ g$ is not necessarily equal to $g \circ f$.
+
+\subsection{Inverse Functions}
+
+\begin{definition}
+A function $f: A \to B$ is invertible if there exists a function $g: B \to A$ such that:
+\[ (f \circ g)(y) = y \text{ for all } y \in B \text{ and } (g \circ f)(x) = x \text{ for all } x \in A \]
+The function $g$ is called the inverse of $f$ and is denoted $f^{-1}$.
+\end{definition}
+
+Not all functions have inverses. A function must be both injective (one-to-one) and surjective (onto) to have an inverse.
+
+\section{Introduction to Calculus}
+
+Calculus is the mathematical study of continuous change. It provides tools for describing and analyzing rates of change and accumulation.
+
+\subsection{Limits}
+
+The concept of a limit is fundamental to calculus. Intuitively, the limit of a function as x approaches a value c is the value that f(x) gets arbitrarily close to as x gets arbitrarily close to c.
+
+\begin{definition}
+We say that the limit of $f(x)$ as $x$ approaches $c$ is $L$, written
+\[ \lim_{x \to c} f(x) = L \]
+if for every $\epsilon > 0$, there exists a $\delta > 0$ such that
+\[ 0 < |x - c| < \delta \implies |f(x) - L| < \epsilon \]
+\end{definition}
+
+\subsection{Continuity}
+
+\begin{definition}
+A function $f$ is continuous at a point $c$ if:
+\begin{enumerate}
+    \item $f(c)$ is defined
+    \item $\lim_{x \to c} f(x)$ exists
+    \item $\lim_{x \to c} f(x) = f(c)$
+\end{enumerate}
+\end{definition}
+
+A function is continuous on an interval if it is continuous at every point in that interval.
+
+\subsection{Derivatives}
+
+The derivative of a function represents its instantaneous rate of change.
+
+\begin{definition}
+The derivative of a function $f$ at a point $x$ is defined as:
+\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]
+if this limit exists.
+\end{definition}
+
+Key rules for derivatives:
+\begin{itemize}
+    \item Sum rule: $(f + g)' = f' + g'$
+    \item Product rule: $(fg)' = f'g + fg'$
+    \item Quotient rule: $(\frac{f}{g})' = \frac{f'g - fg'}{g^2}$
+    \item Chain rule: $(f \circ g)' = (f' \circ g) \cdot g'$
+\end{itemize}
+
+\subsection{Integrals}
+
+Integration is the inverse operation of differentiation. It can be used to find areas, volumes, and solutions to differential equations.
+
+\begin{definition}
+The definite integral of a function $f$ from $a$ to $b$ is defined as:
+\[ \int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x \]
+where $\Delta x = \frac{b-a}{n}$ and $x_i^*$ is any point in the $i$-th subinterval $[x_{i-1}, x_i]$.
+\end{definition}
+
+The Fundamental Theorem of Calculus connects differentiation and integration:
+
+\begin{theorem}[Fundamental Theorem of Calculus]
+If $f$ is continuous on $[a,b]$ and $F$ is any antiderivative of $f$, then
+\[ \int_a^b f(x) dx = F(b) - F(a) \]
+\end{theorem}
+
+This theorem provides a powerful tool for evaluating definite integrals and forms the basis for much of integral calculus.
+
+\section{Linear Algebra}
+
+Linear algebra is the branch of mathematics concerning linear equations, linear functions, and their representations through matrices and vector spaces. It has widespread applications in both mathematics and applied fields.
+
+\subsection{Vectors}
+
+\begin{definition}
+A vector is an element of a vector space. In $\mathbb{R}^n$, a vector can be represented as an ordered n-tuple of real numbers.
+\end{definition}
+
+For vectors $\mathbf{u} = (u_1, \ldots, u_n)$ and $\mathbf{v} = (v_1, \ldots, v_n)$ in $\mathbb{R}^n$, and a scalar $c$:
+
+\begin{itemize}
+    \item Vector addition: $\mathbf{u} + \mathbf{v} = (u_1 + v_1, \ldots, u_n + v_n)$
+    \item Scalar multiplication: $c\mathbf{u} = (cu_1, \ldots, cu_n)$
+    \item Dot product: $\mathbf{u} \cdot \mathbf{v} = u_1v_1 + \cdots + u_nv_n$
+\end{itemize}
+
+\subsection{Matrices}
+
+\begin{definition}
+A matrix is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns.
+\end{definition}
+
+For matrices $A = (a_{ij})$ and $B = (b_{ij})$ of the same size, and a scalar $c$:
+
+\begin{itemize}
+    \item Matrix addition: $(A + B)_{ij} = a_{ij} + b_{ij}$
+    \item Scalar multiplication: $(cA)_{ij} = ca_{ij}$
+    \item Matrix multiplication: $(AB)_{ij} = \sum_k a_{ik}b_{kj}$
+\end{itemize}
+
+\subsection{Systems of Linear Equations}
+
+A system of linear equations can be represented in matrix form as $A\mathbf{x} = \mathbf{b}$, where $A$ is the coefficient matrix, $\mathbf{x}$ is the vector of variables, and $\mathbf{b}$ is the vector of constants.
+
+\begin{theorem}[Existence and Uniqueness of Solutions]
+    For a system $A\mathbf{x} = \mathbf{b}$:
+    \begin{itemize}
+        \item If $\rank(A) = \rank([A|\mathbf{b}]) = n$, where $n$ is the number of variables, the system has a unique solution.
+        \item If $\rank(A) = \rank([A|\mathbf{b}]) < n$, the system has infinitely many solutions.
+        \item If $\rank(A) < \rank([A|\mathbf{b}])$, the system has no solution.
+    \end{itemize}
+    \end{theorem}
+
+\subsection{Determinants}
+
+\begin{definition}
+The determinant of a square matrix $A = (a_{ij})$ is a scalar value that provides information about the matrix's invertibility and the volume scaling factor of the linear transformation represented by the matrix.
+\end{definition}
+
+For a 2x2 matrix:
+\[ \det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc \]
+
+For larger matrices, the determinant can be computed recursively using expansion by minors.
+
+\subsection{Eigenvalues and Eigenvectors}
+
+\begin{definition}
+An eigenvector of a square matrix $A$ is a non-zero vector $\mathbf{v}$ such that $A\mathbf{v} = \lambda\mathbf{v}$ for some scalar $\lambda$. The scalar $\lambda$ is called an eigenvalue of $A$.
+\end{definition}
+
+Eigenvalues can be found by solving the characteristic equation:
+\[ \det(A - \lambda I) = 0 \]
+
+where $I$ is the identity matrix.
+
+\section{Complex Numbers}
+
+Complex numbers extend the concept of the one-dimensional number line to a two-dimensional complex plane by introducing the imaginary unit $i$, defined as $i^2 = -1$.
+
+\subsection{Definition and Basic Operations}
+
+\begin{definition}
+A complex number $z$ is an expression of the form $z = a + bi$, where $a$ and $b$ are real numbers and $i$ is the imaginary unit.
+\end{definition}
+
+For complex numbers $z_1 = a + bi$ and $z_2 = c + di$:
+
+\begin{itemize}
+    \item Addition: $z_1 + z_2 = (a + c) + (b + d)i$
+    \item Multiplication: $z_1z_2 = (ac - bd) + (ad + bc)i$
+    \item Complex conjugate: $\overline{z_1} = a - bi$
+    \item Absolute value: $|z_1| = \sqrt{a^2 + b^2}$
+\end{itemize}
+
+\subsection{Polar Form}
+
+Any complex number can be represented in polar form:
+
+\[ z = r(\cos \theta + i \sin \theta) = re^{i\theta} \]
+
+where $r = |z|$ is the modulus and $\theta = \arg(z)$ is the argument.
+
+\subsection{De Moivre's Theorem}
+
+\begin{theorem}[De Moivre's Theorem]
+For any complex number $z$ and integer $n$:
+\[ (r(\cos \theta + i \sin \theta))^n = r^n(\cos(n\theta) + i \sin(n\theta)) \]
+\end{theorem}
+
+This theorem is particularly useful in finding roots of complex numbers and in solving certain trigonometric equations.
+
+\section{Abstract Algebra}
+
+Abstract algebra is the study of algebraic structures such as groups, rings, and fields. It generalizes familiar concepts from elementary algebra and number theory.
+
+\subsection{Groups}
+
+\begin{definition}
+A group is a set $G$ together with a binary operation $\ast$ satisfying the following axioms:
+\begin{enumerate}
+    \item Closure: For all $a, b \in G$, $a \ast b \in G$
+    \item Associativity: For all $a, b, c \in G$, $(a \ast b) \ast c = a \ast (b \ast c)$
+    \item Identity: There exists an element $e \in G$ such that for all $a \in G$, $e \ast a = a \ast e = a$
+    \item Inverse: For each $a \in G$, there exists an element $a^{-1} \in G$ such that $a \ast a^{-1} = a^{-1} \ast a = e$
+\end{enumerate}
+\end{definition}
+
+Examples of groups include:
+\begin{itemize}
+    \item $(\mathbb{Z}, +)$: The integers under addition
+    \item $(\mathbb{Q} \setminus \{0\}, \times)$: The non-zero rational numbers under multiplication
+    \item $S_n$: The symmetric group of permutations on $n$ elements
+\end{itemize}
+
+\subsection{Rings}
+
+\begin{definition}
+A ring is a set $R$ together with two binary operations $+$ and $\times$ satisfying the following axioms:
+\begin{enumerate}
+    \item $(R, +)$ is an abelian group
+    \item Multiplication is associative
+    \item Distributive laws hold: $a \times (b + c) = (a \times b) + (a \times c)$ and $(a + b) \times c = (a \times c) + (b \times c)$ for all $a, b, c \in R$
+\end{enumerate}
+\end{definition}
+
+Examples of rings include:
+\begin{itemize}
+    \item $(\mathbb{Z}, +, \times)$: The integers under addition and multiplication
+    \item $M_n(\mathbb{R})$: The set of $n \times n$ matrices over the real numbers
+\end{itemize}
+
+\subsection{Fields}
+
+\begin{definition}
+A field is a ring $(F, +, \times)$ where $(F \setminus \{0\}, \times)$ is an abelian group.
+\end{definition}
+
+Examples of fields include:
+\begin{itemize}
+    \item $\mathbb{Q}$: The rational numbers
+    \item $\mathbb{R}$: The real numbers
+    \item $\mathbb{C}$: The complex numbers
+    \item $\mathbb{F}_p$: The finite field of integers modulo a prime $p$
+\end{itemize}
+
+\section{Real Analysis}
+
+Real analysis is the branch of mathematical analysis that studies the behavior of real numbers, sequences, and series of real numbers, and real functions.
+
+\subsection{Properties of Real Numbers}
+
+The real number system $\mathbb{R}$ satisfies the field axioms and has an additional property:
+
+\begin{definition}[Completeness Axiom]
+Every non-empty subset of $\mathbb{R}$ that is bounded above has a least upper bound (supremum) in $\mathbb{R}$.
+\end{definition}
+
+This property distinguishes $\mathbb{R}$ from $\mathbb{Q}$ and ensures that $\mathbb{R}$ has no "gaps".
+
+\subsection{Sequences and Series}
+
+\begin{definition}
+A sequence is a function $a: \mathbb{N} \to \mathbb{R}$. We typically write $a_n$ for $a(n)$.
+\end{definition}
+
+\begin{definition}
+A sequence $(a_n)$ converges to a limit $L$ if for every $\epsilon > 0$, there exists an $N \in \mathbb{N}$ such that for all $n > N$, $|a_n - L| < \epsilon$.
+\end{definition}
+
+\begin{definition}
+Given a sequence $(a_n)$, the series $\sum_{n=1}^{\infty} a_n$ is defined as the limit of the sequence of partial sums $S_N = \sum_{n=1}^N a_n$, if this limit exists.
+\end{definition}
+
+Important tests for convergence of series include:
+\begin{itemize}
+    \item Comparison test
+    \item Ratio test
+    \item Root test
+    \item Integral test
+\end{itemize}
+
+\subsection{Continuity and Differentiability}
+
+\begin{definition}
+A function $f: \mathbb{R} \to \mathbb{R}$ is continuous at a point $c$ if for every $\epsilon > 0$, there exists a $\delta > 0$ such that for all $x$ with $|x - c| < \delta$, we have $|f(x) - f(c)| < \epsilon$.
+\end{definition}
+
+\begin{definition}
+A function $f: \mathbb{R} \to \mathbb{R}$ is differentiable at a point $c$ if the limit
+\[ \lim_{h \to 0} \frac{f(c + h) - f(c)}{h} \]
+exists. This limit, if it exists, is called the derivative of $f$ at $c$ and is denoted $f'(c)$.
+\end{definition}
+
+\begin{theorem}[Mean Value Theorem]
+If $f: [a,b] \to \mathbb{R}$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists a point $c \in (a,b)$ such that
+\[ f'(c) = \frac{f(b) - f(a)}{b - a} \]
+\end{theorem}
+
+\subsection{Riemann Integration}
+
+\begin{definition}
+A function $f: [a,b] \to \mathbb{R}$ is Riemann integrable on $[a,b]$ if the limit
+\[ \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*)(x_i - x_{i-1}) \]
+exists and is the same for all choices of $x_i^*$ in $[x_{i-1}, x_i]$, where $a = x_0 < x_1 < \cdots < x_n = b$ is a partition of $[a,b]$ and the maximum width of the subintervals approaches 0 as $n$ approaches infinity.
+\end{definition}
+
+\begin{theorem}
+Every continuous function on a closed interval is Riemann integrable.
+\end{theorem}
+
+\section{Topology}
+
+Topology is the study of properties of spaces that are invariant under continuous deformations.
+
+\subsection{Topological Spaces}
+
+\begin{definition}
+A topology on a set $X$ is a collection $\mathcal{T}$ of subsets of $X$ satisfying:
+\begin{enumerate}
+    \item $\emptyset$ and $X$ are in $\mathcal{T}$
+    \item The union of any collection of sets in $\mathcal{T}$ is in $\mathcal{T}$
+    \item The intersection of any finite collection of sets in $\mathcal{T}$ is in $\mathcal{T}$
+\end{enumerate}
+The pair $(X, \mathcal{T})$ is called a topological space.
+\end{definition}
+
+\subsection{Continuous Functions}
+
+\begin{definition}
+A function $f: X \to Y$ between topological spaces is continuous if the preimage of every open set in $Y$ is open in $X$.
+\end{definition}
+
+\subsection{Connectedness}
+
+\begin{definition}
+A topological space $X$ is connected if it cannot be written as the union of two disjoint non-empty open sets.
+\end{definition}
+
+\subsection{Compactness}
+
+\begin{definition}
+A topological space $X$ is compact if every open cover of $X$ has a finite subcover.
+\end{definition}
+
+\begin{theorem}[Heine-Borel Theorem]
+A subset of $\mathbb{R}^n$ is compact if and only if it is closed and bounded.
+\end{theorem}
+
+This concludes the overview of foundational elementary mathematics.
+
+\section{References and Further Reading}
+
+\subsection{General Mathematics}
+
+\begin{itemize}
+    \item Courant, R. and Robbins, H. (1996). What is Mathematics?: An Elementary Approach to Ideas and Methods. Oxford University Press.
+    \item Stewart, I. (2015). Concepts of Modern Mathematics. Dover Publications.
+\end{itemize}
+
+\subsection{Number Theory}
+
+\begin{itemize}
+    \item Hardy, G.H. and Wright, E.M. (2008). An Introduction to the Theory of Numbers. Oxford University Press.
+    \item Apostol, T.M. (1976). Introduction to Analytic Number Theory. Springer.
+\end{itemize}
+
+\subsection{Algebra}
+
+\begin{itemize}
+    \item Lang, S. (2002). Algebra. Springer.
+    \item Dummit, D.S. and Foote, R.M. (2004). Abstract Algebra. John Wiley and Sons.
+\end{itemize}
+
+\subsection{Linear Algebra}
+
+\begin{itemize}
+    \item Axler, S. (2015). Linear Algebra Done Right. Springer.
+    \item Strang, G. (2006). Linear Algebra and Its Applications. Thomson Brooks/Cole.
+\end{itemize}
+
+\subsection{Analysis}
+
+\begin{itemize}
+    \item Rudin, W. (1976). Principles of Mathematical Analysis. McGraw-Hill.
+    \item Tao, T. (2016). Analysis I. Hindustan Book Agency.
+\end{itemize}
+
+\subsection{Topology}
+
+\begin{itemize}
+    \item Munkres, J.R. (2000). Topology. Prentice Hall.
+    \item Willard, S. (2004). General Topology. Dover Publications.
+\end{itemize}
+
+\subsection{Probability and Statistics}
+
+\begin{itemize}
+    \item Feller, W. (1968). An Introduction to Probability Theory and Its Applications. Wiley.
+    \item Wasserman, L. (2004). All of Statistics: A Concise Course in Statistical Inference. Springer.
+\end{itemize}
+
+\subsection{History of Mathematics}
+
+\begin{itemize}
+    \item Boyer, C.B. and Merzbach, U.C. (2011). A History of Mathematics. Wiley.
+    \item Katz, V.J. (1998). A History of Mathematics: An Introduction. Addison-Wesley.
+\end{itemize}
+
+\end{document}
