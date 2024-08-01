@@ -1,0 +1,675 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage[margin=0.3in]{geometry}
+
+% Dark mode option
+\newif\ifDarkMode
+\DarkModetrue % Set to \DarkModetrue for dark mode
+
+% Dracula color scheme (only used in dark mode)
+\definecolor{draculaBackground}{HTML}{282a36}
+\definecolor{draculaForeground}{HTML}{f8f8f2}
+\definecolor{draculaComment}{HTML}{6272a4}
+\definecolor{draculaPurple}{HTML}{bd93f9}
+\definecolor{draculaGreen}{HTML}{50fa7b}
+\definecolor{draculaOrange}{HTML}{ffb86c}
+\definecolor{draculaPink}{HTML}{ff79c6}
+\definecolor{draculaRed}{HTML}{ff5555}
+\definecolor{draculaYellow}{HTML}{f1fa8c}
+\definecolor{draculaCyan}{HTML}{8be9fd}
+
+% Color settings based on dark mode
+\ifDarkMode
+  \pagecolor{draculaBackground}
+  \color{draculaForeground}
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=draculaCyan,
+    filecolor=draculaGreen,
+    urlcolor=draculaPink,
+    citecolor=draculaOrange
+  }
+\else
+  \pagecolor{white}
+  \color{black}
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    citecolor=black
+  }
+\fi
+
+% Custom commands for colored math (only affect dark mode)
+\newcommand{\eqcolor}[1]{\ifDarkMode\textcolor{draculaPurple}{#1}\else#1\fi}
+\newcommand{\numcolor}[1]{\ifDarkMode\textcolor{draculaOrange}{#1}\else#1\fi}
+\newcommand{\varcolor}[1]{\ifDarkMode\textcolor{draculaGreen}{#1}\else#1\fi}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+% Improved section formatting
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\ifDarkMode\color{draculaPink}\else\color{black}\fi}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\ifDarkMode\color{draculaYellow}\else\color{black}\fi}
+  {\thesubsection}{1em}{}
+
+% Table of contents formatting
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\ifDarkMode\color{draculaPink}\else\color{black}\fi}
+\renewcommand{\cftsubsecfont}{\ifDarkMode\color{draculaYellow}\else\color{black}\fi}
+
+\title{\ifDarkMode\textcolor{draculaPink}{\Huge Elementary Mathematics}\else\Huge Elementary Mathematics\fi}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{\textcolor{draculaCyan}{Introduction to Number Theory}}
+
+\subsection{\textcolor{draculaYellow}{Natural Numbers}}
+
+The set of natural numbers, denoted by $\varcolor{\mathbb{N}}$, is the foundation of elementary mathematics. It consists of the counting numbers:
+
+\[
+\varcolor{\mathbb{N}} = \{\numcolor{1}, \numcolor{2}, \numcolor{3}, \numcolor{4}, \ldots\}
+\]
+
+\begin{definition}[Peano Axioms]
+The Peano Axioms are the fundamental axioms for the natural numbers:
+\begin{enumerate}
+    \item 0 is a natural number.
+    \item For every natural number $\varcolor{n}$, there exists a unique natural number called the successor of $\varcolor{n}$, denoted by $\varcolor{S(n)}$.
+    \item 0 is not the successor of any natural number.
+    \item If $\varcolor{S(m) = S(n)}$, then $\varcolor{m = n}$.
+    \item If a set $\varcolor{K}$ of natural numbers contains 0 and the successor of every number in $\varcolor{K}$, then $\varcolor{K}$ is the entire set of natural numbers.
+\end{enumerate}
+\end{definition}
+
+\subsection{\textcolor{draculaYellow}{Integer Division and Modular Arithmetic}}
+
+For any two integers $\varcolor{a}$ and $\varcolor{b}$ ($\varcolor{b} \neq \numcolor{0}$), there exist unique integers $\varcolor{q}$ (quotient) and $\varcolor{r}$ (remainder) such that:
+
+\[
+\eqcolor{a = bq + r}, \quad \numcolor{0} \leq \varcolor{r} < |\varcolor{b}|
+\]
+
+This is known as the Division Algorithm.
+
+\begin{definition}[Congruence]
+Two integers $\varcolor{a}$ and $\varcolor{b}$ are said to be congruent modulo $\varcolor{m}$ if $\varcolor{m}$ divides their difference. We write:
+
+\[
+\eqcolor{a \equiv b \pmod{m}}
+\]
+
+This means that $\varcolor{a}$ and $\varcolor{b}$ have the same remainder when divided by $\varcolor{m}$.
+\end{definition}
+
+\begin{theorem}[Properties of Congruences]
+For any integers $\varcolor{a}$, $\varcolor{b}$, $\varcolor{c}$, and $\varcolor{d}$, and positive integer $\varcolor{m}$:
+\begin{enumerate}
+    \item If $\eqcolor{a \equiv b \pmod{m}}$ and $\eqcolor{c \equiv d \pmod{m}}$, then:
+        \begin{itemize}
+            \item $\eqcolor{a + c \equiv b + d \pmod{m}}$
+            \item $\eqcolor{a - c \equiv b - d \pmod{m}}$
+            \item $\eqcolor{ac \equiv bd \pmod{m}}$
+        \end{itemize}
+    \item If $\eqcolor{a \equiv b \pmod{m}}$, then for any integer $\varcolor{k}$:
+        \begin{itemize}
+            \item $\eqcolor{ka \equiv kb \pmod{m}}$
+            \item $\eqcolor{a^k \equiv b^k \pmod{m}}$
+        \end{itemize}
+\end{enumerate}
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Prime Numbers}}
+
+A natural number $\varcolor{p} > \numcolor{1}$ is called prime if its only positive divisors are $\numcolor{1}$ and itself.
+
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+Every positive integer greater than 1 can be represented uniquely as a product of prime powers:
+
+\[
+\eqcolor{n = p_1^{a_1} \cdot p_2^{a_2} \cdot \ldots \cdot p_k^{a_k}}
+\]
+
+where $\varcolor{p_1}, \varcolor{p_2}, \ldots, \varcolor{p_k}$ are distinct primes and $\varcolor{a_1}, \varcolor{a_2}, \ldots, \varcolor{a_k}$ are positive integers.
+\end{theorem}
+
+\begin{theorem}[Infinitude of Primes]
+There are infinitely many prime numbers.
+\end{theorem}
+
+\begin{proof}
+Suppose, for the sake of contradiction, that there are only finitely many primes: $\varcolor{p_1}, \varcolor{p_2}, \ldots, \varcolor{p_k}$. Consider the number:
+
+\[
+\eqcolor{N = p_1 \cdot p_2 \cdot \ldots \cdot p_k + 1}
+\]
+
+$\varcolor{N}$ is not divisible by any of $\varcolor{p_1}, \varcolor{p_2}, \ldots, \varcolor{p_k}$, as it leaves a remainder of 1 when divided by each of them. Therefore, either $\varcolor{N}$ is itself prime, or it has a prime factor larger than any in our supposed finite list. In either case, we have a prime not in our original list, contradicting our assumption. Thus, there must be infinitely many primes.
+\end{proof}
+
+\begin{theorem}[Euler's Totient Function]
+For a positive integer $\varcolor{n}$, Euler's totient function $\varcolor{\phi(n)}$ counts the number of integers between 1 and $\varcolor{n}$ that are coprime to $\varcolor{n}$. If $\varcolor{n = p_1^{a_1} \cdot p_2^{a_2} \cdot \ldots \cdot p_k^{a_k}}$, then:
+
+\[
+\eqcolor{\phi(n) = n \prod_{i=1}^k \left(1 - \frac{1}{p_i}\right)}
+\]
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Basic Algebra}}
+
+\subsection{\textcolor{draculaYellow}{Algebraic Expressions}}
+
+An algebraic expression is a combination of variables, numbers, and operations. For example:
+
+\[
+\eqcolor{3x^2 + 2y - 5}
+\]
+
+\begin{definition}[Polynomial]
+A polynomial in $\varcolor{x}$ is an expression of the form:
+
+\[
+\eqcolor{a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0}
+\]
+
+where $\varcolor{n}$ is a non-negative integer and $\varcolor{a_0}, \varcolor{a_1}, \ldots, \varcolor{a_n}$ are constants, with $\varcolor{a_n \neq 0}$.
+\end{definition}
+
+\subsection{\textcolor{draculaYellow}{Equations and Inequalities}}
+
+An equation is a statement that two expressions are equal. For example:
+
+\[
+\eqcolor{x^2 + 3x - 4 = 0}
+\]
+
+An inequality is a statement that one quantity is greater than or less than another. For example:
+
+\[
+\eqcolor{2x + 5 > 7}
+\]
+
+\begin{theorem}[Quadratic Formula]
+For a quadratic equation in the form $\eqcolor{ax^2 + bx + c = 0}$, where $\varcolor{a \neq 0}$, the solutions are given by:
+
+\[
+\eqcolor{x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}}
+\]
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Functions}}
+
+A function $\varcolor{f}$ from a set $\varcolor{A}$ to a set $\varcolor{B}$ is a rule that assigns to each element $\varcolor{x}$ in $\varcolor{A}$ exactly one element $\varcolor{y}$ in $\varcolor{B}$. We write:
+
+\[
+\eqcolor{f: A \to B}
+\]
+
+\begin{definition}[Injective, Surjective, and Bijective Functions]
+Let $\varcolor{f: A \to B}$ be a function.
+\begin{itemize}
+    \item $\varcolor{f}$ is injective (one-to-one) if $\eqcolor{f(x_1) = f(x_2)}$ implies $\eqcolor{x_1 = x_2}$ for all $\varcolor{x_1, x_2 \in A}$.
+    \item $\varcolor{f}$ is surjective (onto) if for every $\varcolor{y \in B}$, there exists an $\varcolor{x \in A}$ such that $\eqcolor{f(x) = y}$.
+    \item $\varcolor{f}$ is bijective if it is both injective and surjective.
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Composition of Functions]
+If $\varcolor{f: A \to B}$ and $\varcolor{g: B \to C}$ are functions, then their composition $\varcolor{g \circ f: A \to C}$ is defined as:
+
+\[
+\eqcolor{(g \circ f)(x) = g(f(x))}
+\]
+
+for all $\varcolor{x \in A}$.
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Advanced Algebra}}
+
+\subsection{\textcolor{draculaYellow}{Complex Numbers}}
+
+\begin{definition}[Complex Number]
+A complex number is a number of the form $\eqcolor{a + bi}$, where $\varcolor{a}$ and $\varcolor{b}$ are real numbers and $\varcolor{i}$ is the imaginary unit defined by $\eqcolor{i^2 = -1}$.
+\end{definition}
+
+The set of all complex numbers is denoted by $\varcolor{\mathbb{C}}$. For a complex number $\varcolor{z = a + bi}$:
+\begin{itemize}
+    \item $\varcolor{a}$ is called the real part, denoted by $\eqcolor{\text{Re}(z)}$
+    \item $\varcolor{b}$ is called the imaginary part, denoted by $\eqcolor{\text{Im}(z)}$
+\end{itemize}
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+Every non-constant polynomial with complex coefficients has at least one complex root.
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Vector Spaces}}
+
+\begin{definition}[Vector Space]
+A vector space over a field $\varcolor{F}$ is a set $\varcolor{V}$ together with two operations:
+\begin{itemize}
+    \item Vector addition: $\eqcolor{+: V \times V \to V}$
+    \item Scalar multiplication: $\eqcolor{\cdot: F \times V \to V}$
+\end{itemize}
+satisfying the following axioms for all $\varcolor{u, v, w \in V}$ and $\varcolor{a, b \in F}$:
+\begin{enumerate}
+    \item $\eqcolor{u + v = v + u}$ (commutativity)
+    \item $\eqcolor{(u + v) + w = u + (v + w)}$ (associativity)
+    \item There exists a zero vector $\varcolor{0 \in V}$ such that $\eqcolor{v + 0 = v}$ for all $\varcolor{v \in V}$
+    \item For each $\varcolor{v \in V}$, there exists $\varcolor{-v \in V}$ such that $\eqcolor{v + (-v) = 0}$
+    \item $\eqcolor{a(u + v) = au + av}$ (distributivity)
+    \item $\eqcolor{(a + b)v = av + bv}$ (distributivity)
+    \item $\eqcolor{(ab)v = a(bv)}$ (associativity of scalar multiplication)
+    \item $\eqcolor{1v = v}$ where $\varcolor{1}$ is the multiplicative identity in $\varcolor{F}$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Linear Independence]
+A set of vectors $\{\varcolor{v_1, v_2, \ldots, v_n}\}$ in a vector space $\varcolor{V}$ is linearly independent if the equation:
+
+\[
+\eqcolor{a_1v_1 + a_2v_2 + \ldots + a_nv_n = 0}
+\]
+
+has only the trivial solution $\eqcolor{a_1 = a_2 = \ldots = a_n = 0}$.
+\end{definition}
+
+\begin{definition}[Basis]
+A basis for a vector space $\varcolor{V}$ is a linearly independent set of vectors that spans $\varcolor{V}$.
+\end{definition}
+
+\begin{theorem}[Dimension Theorem]
+Any two bases of a finite-dimensional vector space have the same number of elements, called the dimension of the vector space.
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Linear Algebra}}
+
+\subsection{\textcolor{draculaYellow}{Matrices and Determinants}}
+
+\begin{definition}[Matrix]
+A matrix is a rectangular array of numbers, symbols, or expressions arranged in rows and columns. An $\varcolor{m \times n}$ matrix $\varcolor{A}$ has $\varcolor{m}$ rows and $\varcolor{n}$ columns:
+
+\[
+\eqcolor{A = \begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}}
+\]
+\end{definition}
+
+\begin{definition}[Determinant]
+The determinant of a square matrix $\varcolor{A}$ is a scalar value that provides information about the system of linear equations represented by $\varcolor{A}$. For a $\varcolor{2 \times 2}$ matrix:
+
+\[
+\eqcolor{\det\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix} = ad - bc}
+\]
+
+For larger matrices, the determinant is calculated recursively using cofactor expansion.
+\end{definition}
+
+\begin{theorem}[Properties of Determinants]
+For square matrices $\varcolor{A}$ and $\varcolor{B}$ of the same size:
+\begin{enumerate}
+    \item $\eqcolor{\det(AB) = \det(A)\det(B)}$
+    \item $\eqcolor{\det(A^T) = \det(A)}$, where $\varcolor{A^T}$ is the transpose of $\varcolor{A}$
+    \item $\eqcolor{\det(A^{-1}) = \frac{1}{\det(A)}}$, if $\varcolor{A}$ is invertible
+    \item $\eqcolor{\det(kA) = k^n\det(A)}$, where $\varcolor{k}$ is a scalar and $\varcolor{n}$ is the size of $\varcolor{A}$
+\end{enumerate}
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Eigenvalues and Eigenvectors}}
+
+\begin{definition}[Eigenvalue and Eigenvector]
+For a square matrix $\varcolor{A}$, a scalar $\varcolor{\lambda}$ is called an eigenvalue of $\varcolor{A}$ if there exists a non-zero vector $\varcolor{v}$ such that:
+
+\[
+\eqcolor{Av = \lambda v}
+\]
+
+The vector $\varcolor{v}$ is called an eigenvector of $\varcolor{A}$ corresponding to the eigenvalue $\varcolor{\lambda}$.
+\end{definition}
+
+\begin{theorem}[Characteristic Equation]
+The eigenvalues of a square matrix $\varcolor{A}$ are the solutions to the characteristic equation:
+
+\[
+\eqcolor{\det(A - \lambda I) = 0}
+\]
+
+where $\varcolor{I}$ is the identity matrix of the same size as $\varcolor{A}$.
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Geometry}}
+
+\subsection{\textcolor{draculaYellow}{Euclidean Geometry}}
+
+Euclidean geometry is based on five postulates:
+
+\begin{enumerate}
+    \item A straight line segment can be drawn joining any two points.
+    \item Any straight line segment can be extended indefinitely in a straight line.
+    \item Given any straight line segment, a circle can be drawn having the segment as radius and one endpoint as center.
+    \item All right angles are congruent.
+    \item If two lines are drawn which intersect a third in such a way that the sum of the inner angles on one side is less than two right angles, then the two lines inevitably must intersect each other on that side if extended far enough.
+\end{enumerate}
+
+\subsection{\textcolor{draculaYellow}{Triangles}}
+
+\begin{theorem}[Angle Sum of a Triangle]
+The sum of the measures of the interior angles of a triangle is always 180°.
+\end{theorem}
+
+\begin{theorem}[Pythagorean Theorem]
+In a right-angled triangle, the square of the length of the hypotenuse is equal to the sum of squares of the other two sides.
+
+If $\varcolor{a}$ and $\varcolor{b}$ are the lengths of the legs and $\varcolor{c}$ is the length of the hypotenuse, then:
+
+\[
+\eqcolor{a^2 + b^2 = c^2}
+\]
+\end{theorem}
+
+\begin{theorem}[Law of Sines]
+For a triangle with sides $\varcolor{a}$, $\varcolor{b}$, and $\varcolor{c}$, and opposite angles $\varcolor{A}$, $\varcolor{B}$, and $\varcolor{C}$:
+
+\[
+\eqcolor{\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}}
+\]
+\end{theorem}
+
+\begin{theorem}[Law of Cosines]
+For a triangle with sides $\varcolor{a}$, $\varcolor{b}$, and $\varcolor{c}$, and opposite angles $\varcolor{A}$, $\varcolor{B}$, and $\varcolor{C}$:
+
+\[
+\eqcolor{c^2 = a^2 + b^2 - 2ab\cos C}
+\]
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Circles}}
+
+\begin{definition}[Circle]
+A circle is the set of all points in a plane that are at a fixed distance (called the radius) from a central point.
+\end{definition}
+
+\begin{theorem}[Area of a Circle]
+The area $\varcolor{A}$ of a circle with radius $\varcolor{r}$ is given by:
+
+\[
+\eqcolor{A = \pi r^2}
+\]
+\end{theorem}
+
+\begin{theorem}[Circumference of a Circle]
+The circumference $\varcolor{C}$ of a circle with radius $\varcolor{r}$ is given by:
+
+\[
+\eqcolor{C = 2\pi r}
+\]
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Trigonometry}}
+
+\subsection{\textcolor{draculaYellow}{Trigonometric Functions}}
+
+The six basic trigonometric functions are:
+
+\begin{itemize}
+    \item Sine: $\eqcolor{\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}}$
+    \item Cosine: $\eqcolor{\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}}}$
+    \item Tangent: $\eqcolor{\tan \theta = \frac{\sin \theta}{\cos \theta} = \frac{\text{opposite}}{\text{adjacent}}}$
+    \item Cosecant: $\eqcolor{\csc \theta = \frac{1}{\sin \theta}}$
+    \item Secant: $\eqcolor{\sec \theta = \frac{1}{\cos \theta}}$
+    \item Cotangent: $\eqcolor{\cot \theta = \frac{1}{\tan \theta}}$
+\end{itemize}
+
+\begin{theorem}[Fundamental Trigonometric Identity]
+For any angle $\varcolor{\theta}$:
+
+\[
+\eqcolor{\sin^2 \theta + \cos^2 \theta = 1}
+\]
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Trigonometric Equations}}
+
+\begin{theorem}[Addition Formulas]
+For angles $\varcolor{\alpha}$ and $\varcolor{\beta}$:
+\begin{align*}
+\eqcolor{\sin(\alpha + \beta)} &= \eqcolor{\sin \alpha \cos \beta + \cos \alpha \sin \beta} \\
+\eqcolor{\cos(\alpha + \beta)} &= \eqcolor{\cos \alpha \cos \beta - \sin \alpha \sin \beta}
+\end{align*}
+\end{theorem}
+
+\begin{theorem}[Double Angle Formulas]
+For any angle $\varcolor{\theta}$:
+\begin{align*}
+\eqcolor{\sin(2\theta)} &= \eqcolor{2\sin \theta \cos \theta} \\
+\eqcolor{\cos(2\theta)} &= \eqcolor{\cos^2 \theta - \sin^2 \theta = 2\cos^2 \theta - 1 = 1 - 2\sin^2 \theta}
+\end{align*}
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Calculus}}
+
+\subsection{\textcolor{draculaYellow}{Limits}}
+
+\begin{definition}[Limit]
+The limit of a function $\varcolor{f(x)}$ as $\varcolor{x}$ approaches $\varcolor{a}$ is $\varcolor{L}$, written as:
+
+\[
+\eqcolor{\lim_{x \to a} f(x) = L}
+\]
+
+if for every $\varcolor{\epsilon > 0}$, there exists a $\varcolor{\delta > 0}$ such that:
+
+\[
+\eqcolor{0 < |x - a| < \delta \implies |f(x) - L| < \epsilon}
+\]
+\end{definition}
+
+\begin{theorem}[Limit Laws]
+For functions $\varcolor{f}$ and $\varcolor{g}$ and constant $\varcolor{c}$:
+\begin{enumerate}
+    \item $\eqcolor{\lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x)}$
+    \item $\eqcolor{\lim_{x \to a} [f(x) \cdot g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)}$
+    \item $\eqcolor{\lim_{x \to a} [c \cdot f(x)] = c \cdot \lim_{x \to a} f(x)}$
+    \item $\eqcolor{\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)}}$, if $\eqcolor{\lim_{x \to a} g(x) \neq 0}$
+\end{enumerate}
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Derivatives}}
+
+\begin{definition}[Derivative]
+The derivative of a function $\varcolor{f(x)}$ at a point $\varcolor{x = a}$ is defined as:
+
+\[
+\eqcolor{f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}}
+\]
+
+if this limit exists.
+\end{definition}
+
+\begin{theorem}[Differentiation Rules]
+For functions $\varcolor{f}$ and $\varcolor{g}$ and constant $\varcolor{c}$:
+\begin{enumerate}
+    \item $\eqcolor{\frac{d}{dx}[c] = 0}$
+    \item $\eqcolor{\frac{d}{dx}[x^n] = nx^{n-1}}$
+    \item $\eqcolor{\frac{d}{dx}[cf(x)] = c\frac{d}{dx}[f(x)]}$
+    \item $\eqcolor{\frac{d}{dx}[f(x) + g(x)] = \frac{d}{dx}[f(x)] + \frac{d}{dx}[g(x)]}$
+    \item $\eqcolor{\frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)}$ (Product Rule)
+    \item $\eqcolor{\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}}$ (Quotient Rule)
+    \item $\eqcolor{\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)}$ (Chain Rule)
+\end{enumerate}
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Integrals}}
+
+\begin{definition}[Definite Integral]
+The definite integral of a function $\varcolor{f(x)}$ from $\varcolor{a}$ to $\varcolor{b}$ is defined as:
+
+\[
+\eqcolor{\int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x}
+\]
+
+where $\varcolor{\Delta x = \frac{b-a}{n}}$ and $\varcolor{x_i^*}$ is any point in the $\varcolor{i}$-th subinterval $\varcolor{[x_{i-1}, x_i]}$.
+\end{definition}
+
+\begin{theorem}[Fundamental Theorem of Calculus]
+If $\varcolor{f}$ is continuous on $\varcolor{[a, b]}$ and $\varcolor{F}$ is an antiderivative of $\varcolor{f}$ on $\varcolor{[a, b]}$, then:
+
+\[
+\eqcolor{\int_a^b f(x) dx = F(b) - F(a)}
+\]
+\end{theorem}
+
+\begin{theorem}[Integration by Parts]
+For functions $\varcolor{u}$ and $\varcolor{v}$:
+
+\[
+\eqcolor{\int u \frac{dv}{dx} dx = uv - \int v \frac{du}{dx} dx}
+\]
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Set Theory}}
+
+\subsection{\textcolor{draculaYellow}{Basic Set Operations}}
+
+\begin{definition}[Set Operations]
+For sets $\varcolor{A}$ and $\varcolor{B}$:
+\begin{itemize}
+    \item Union: $\eqcolor{A \cup B = \{x : x \in A \text{ or } x \in B\}}$
+    \item Intersection: $\eqcolor{A \cap B = \{x : x \in A \text{ and } x \in B\}}$
+    \item Difference: $\eqcolor{A \setminus B = \{x : x \in A \text{ and } x \notin B\}}$
+    \item Complement: $\eqcolor{A^c = \{x : x \notin A\}}$
+    \item Cartesian Product: $\eqcolor{A \times B = \{(a, b) : a \in A \text{ and } b \in B\}}$
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[De Morgan's Laws]
+For sets $\varcolor{A}$ and $\varcolor{B}$:
+\begin{enumerate}
+    \item $\eqcolor{(A \cup B)^c = A^c \cap B^c}$
+    \item $\eqcolor{(A \cap B)^c = A^c \cup B^c}$
+\end{enumerate}
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Functions and Relations}}
+
+\begin{definition}[Function]
+A function $\varcolor{f}$ from set $\varcolor{A}$ to set $\varcolor{B}$ is a subset of $\varcolor{A \times B}$ such that for each $\varcolor{a \in A}$, there exists exactly one $\varcolor{b \in B}$ with $\varcolor{(a, b) \in f}$.
+\end{definition}
+
+\begin{definition}[Relation]
+A relation $\varcolor{R}$ from set $\varcolor{A}$ to set $\varcolor{B}$ is any subset of $\varcolor{A \times B}$.
+\end{definition}
+
+\begin{theorem}[Composition of Functions]
+If $\varcolor{f: A \to B}$ and $\varcolor{g: B \to C}$ are functions, then their composition $\varcolor{g \circ f: A \to C}$ is defined by:
+
+\[
+\eqcolor{(g \circ f)(a) = g(f(a))}
+\]
+
+for all $\varcolor{a \in A}$.
+\end{theorem}
+
+\section{\textcolor{draculaCyan}{Probability Theory}}
+
+\subsection{\textcolor{draculaYellow}{Basic Probability}}
+
+\begin{definition}[Probability]
+For a sample space $\varcolor{\Omega}$ and an event $\varcolor{A \subseteq \Omega}$, the probability of $\varcolor{A}$ is a function $\varcolor{P}$ satisfying:
+\begin{enumerate}
+    \item $\eqcolor{0 \leq P(A) \leq 1}$
+    \item $\eqcolor{P(\Omega) = 1}$
+    \item For mutually exclusive events $\varcolor{A_1, A_2, \ldots}$:
+    \[
+    \eqcolor{P\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} P(A_i)}
+    \]
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Addition Rule]
+For events $\varcolor{A}$ and $\varcolor{B}$:
+
+\[
+\eqcolor{P(A \cup B) = P(A) + P(B) - P(A \cap B)}
+\]
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Conditional Probability}}
+
+\begin{definition}[Conditional Probability]
+The conditional probability of event $\varcolor{A}$ given event $\varcolor{B}$ is:
+
+\[
+\eqcolor{P(A|B) = \frac{P(A \cap B)}{P(B)}}
+\]
+
+where $\varcolor{P(B) > 0}$.
+\end{definition}
+
+\begin{theorem}[Bayes' Theorem]
+For events $\varcolor{A}$ and $\varcolor{B}$:
+
+\[
+\eqcolor{P(A|B) = \frac{P(B|A)P(A)}{P(B)}}
+\]
+\end{theorem}
+
+\subsection{\textcolor{draculaYellow}{Random Variables}}
+
+\begin{definition}[Random Variable]
+A random variable $\varcolor{X}$ is a function from a sample space $\varcolor{\Omega}$ to the real numbers $\varcolor{\mathbb{R}}$.
+\end{definition}
+
+\begin{definition}[Expected Value]
+The expected value of a discrete random variable $\varcolor{X}$ with probability mass function $\varcolor{p(x)}$ is:
+
+\[
+\eqcolor{E[X] = \sum_x x \cdot p(x)}
+\]
+\end{definition}
+
+\begin{definition}[Variance]
+The variance of a random variable $\varcolor{X}$ is:
+
+\[
+\eqcolor{\text{Var}(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2}
+\]
+\end{definition}
+
+\begin{theorem}[Chebyshev's Inequality]
+For a random variable $\varcolor{X}$ with finite expected value $\varcolor{\mu}$ and finite non-zero variance $\varcolor{\sigma^2}$:
+
+\[
+\eqcolor{P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2}}
+\]
+
+for any positive real number $\varcolor{k}$.
+\end{theorem}
+
+\end{document}
