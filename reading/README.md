@@ -2,6 +2,10 @@
 
 ## Mathematics
 
+Attention is All You Need - [PDF](https://files.catbox.moe/yjz5g9.pdf)
+
+High-Resolution Image Synthesis with Latent Diffusion Models - [PDF](https://files.catbox.moe/kklezm.pdf)
+
 ### Foundations and General Mathematics
 1. **Mathematics: Its Content, Methods and Meaning**
    - Authors: A. D. Aleksandrov, A. N. Kolmogorov, M. A. Lavrent'ev
